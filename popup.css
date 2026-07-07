@@ -1,0 +1,314 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 380px;
+  min-height: 200px;
+  max-height: 560px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  font-size: 13px;
+  color: #333;
+  background: #f5f7fa;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 560px;
+}
+
+/* 顶部标题栏 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaed;
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:active {
+  transform: scale(0.96);
+}
+
+.btn-primary {
+  padding: 6px 14px;
+  background: #4e6ef2;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #3d5bd9;
+}
+
+.btn-primary:disabled {
+  background: #a0b0f5;
+  cursor: not-allowed;
+}
+
+.btn-icon {
+  width: 28px;
+  height: 28px;
+  background: #f0f2f5;
+  color: #666;
+  border-radius: 50%;
+}
+
+.btn-icon:hover {
+  background: #e4e6e9;
+  color: #333;
+}
+
+/* 状态栏 */
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  background: #fff;
+  border-bottom: 1px solid #f0f2f5;
+  flex-shrink: 0;
+}
+
+#status-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.sign-count {
+  font-size: 12px;
+  color: #4e6ef2;
+  font-weight: 500;
+}
+
+/* 贴吧列表 */
+.forum-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.forum-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.forum-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.forum-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  transition: background 0.1s;
+  cursor: default;
+}
+
+.forum-item:hover {
+  background: #f8f9fb;
+}
+
+.forum-item + .forum-item {
+  border-top: 1px solid #f5f5f5;
+}
+
+.forum-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.forum-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.forum-level {
+  font-size: 11px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.forum-status {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-badge {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.status-unsigned {
+  background: #f0f2f5;
+  color: #999;
+}
+
+.status-signing {
+  background: #e8f0fe;
+  color: #4e6ef2;
+}
+
+.status-signed {
+  background: #e6f7e9;
+  color: #07a35a;
+}
+
+.status-failed {
+  background: #fde8e8;
+  color: #e53935;
+}
+
+.btn-retry {
+  width: 24px;
+  height: 24px;
+  background: none;
+  color: #999;
+  border-radius: 50%;
+  font-size: 14px;
+}
+
+.btn-retry:hover {
+  background: #f0f2f5;
+  color: #4e6ef2;
+}
+
+/* 底部 */
+.footer {
+  padding: 8px 16px;
+  background: #fff;
+  border-top: 1px solid #e8eaed;
+  flex-shrink: 0;
+}
+
+#last-sign-time {
+  font-size: 11px;
+  color: #aaa;
+}
+
+/* 加载状态 */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  color: #999;
+}
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid #e8eaed;
+  border-top-color: #4e6ef2;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin-bottom: 12px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-state p {
+  font-size: 12px;
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+
+.empty-state p {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.empty-state a {
+  color: #4e6ef2;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.empty-state a:hover {
+  text-decoration: underline;
+}
+
+/* 错误状态 */
+.error-state {
+  text-align: center;
+  padding: 30px 20px;
+  color: #e53935;
+}
+
+.error-state p {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.error-state .btn {
+  margin: 0 auto;
+  padding: 6px 16px;
+  background: #f0f2f5;
+  color: #333;
+}
+
+.error-state .btn:hover {
+  background: #e4e6e9;
+}
+
+/* 进度条 */
+.progress-bar {
+  height: 2px;
+  background: #e8eaed;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  background: #4e6ef2;
+  transition: width 0.3s ease;
+  border-radius: 1px;
+}
