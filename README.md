@@ -2,6 +2,9 @@
 
 一款轻量级 Chrome 浏览器插件，实现百度贴吧关注贴吧的自动签到功能。无需每天手动打开贴吧逐个签到，插件会在后台自动完成，让你不再遗漏任何一家贴吧的经验值。
 
+<img width="408" height="568" alt="image" src="https://github.com/user-attachments/assets/a11e86f0-2cbd-416d-a8d0-e86d0f9a23b0" />
+
+
 ---
 
 ## 功能特性
